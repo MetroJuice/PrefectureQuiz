@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>都道府県マスター</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="app-header">
+        <h1>都道府県マスター</h1>
+        <div class="header-controls">
+            <select id="gameModeSelect" class="mode-select unified-mode-select">
+                <option value="quiz_pref">都道府県クイズ</option>
+                <option value="quiz_cap">県庁所在地クイズ</option>
+                <option value="memorize">暗記モード</option>
+            </select>
+            <button id="themeToggle" class="theme-toggle" title="ダークモード切替">🌙</button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="map-section" id="mapSection">
+            <div id="mapContainer">
+                <!-- SVG Map will be injected here -->
+            </div>
+        </div>
+
+        <div class="list-section">
+            <div class="list-header">
+                <h2>選択リスト</h2>
+                <div id="progress">クリア: <span id="progressCount">0</span> / 47</div>
+            </div>
+            <ul class="prefecture-list" id="prefectureList">
+                <!-- List items injected by JS -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="infoModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="info-card">
+                <h3 id="infoName">都道府県名</h3>
+                <div class="info-row" id="infoCapital">県庁所在地: <span>-</span></div>
+                <div class="info-row"><strong>地方:</strong> <span id="infoRegion">-</span></div>
+                <div class="info-row"><strong>隣接:</strong> <span id="infoNeighbors">-</span></div>
+                <div class="info-row"><strong>名産:</strong> <span id="infoSpecialties">-</span></div>
+                <div class="trivia-box">
+                    <strong>豆知識:</strong><br>
+                    <span id="infoRelation">-</span>
+                </div>
+                <button class="next-btn" id="nextBtn">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tooltip for Memorization Mode is removed -->
+
+    <script src="scripts/data.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
